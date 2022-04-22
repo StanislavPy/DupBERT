@@ -1,0 +1,50 @@
+seed: &seed 1234
+logdir: &logdir '../logs/'
+
+model_params:
+  dropout_rate: 0.5
+  output_channels: [3, 4, 5]
+  kernel_sizes: [100, 100, 100]
+  pretrained_model_name_or_path: &bert_model 'bert-base-uncased'
+
+txt_tokenizer:
+  lower:  False
+  remove_tags: False
+  remove_digits: False
+  remove_stop_words: False
+  remove_punctuation: False
+  keep_only_known_symbols: False
+
+encoder:
+  pretrained_model_name_or_path: *bert_model
+  add_special_tokens: False
+
+pad_sequencer:
+  d_type: 'int64'
+  padding: 'post'
+  truncating: 'post'
+  max_seq_length: 300
+
+
+train_test_split:
+  test_size: 0.2
+  random_state: *seed
+  shuffle: &shuffle True
+    
+loaders:
+  batch_size: 64
+  num_workers: 5
+  shuffle: *shuffle
+
+train:
+  logdir: *logdir
+  num_epochs: 100
+  
+optimizer:
+  lr: .0001
+  weight_decay: 0.01
+
+early_stopping:
+  logdir: *logdir
+  metric_key: 'auc'
+  minimize: False
