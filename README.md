@@ -1,6 +1,6 @@
 # DupBERT
 
-DupBERT is a siamese neural network based on BERT helping classify two texts with similar meaning as duplicates.
+DupBERT is a siamese neural network based on BERT helping to classify texts with similar meaning as duplicates.
 The package utilises Catalyst (PyTorch framework for Deep Learning Research and Development) and can be easily run with different neural architectures.
 
 
