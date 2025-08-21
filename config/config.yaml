@@ -38,7 +38,7 @@ loaders:
 
 train:
   logdir: *logdir
-  num_epochs: 100
+  num_epochs: 50
   
 optimizer:
   lr: .0001

@@ -29,4 +29,3 @@ TextTokenizer is tested with English, and Russian languages. It has multiple che
 
 ## Examples
 Please review the example notebook for reference. The example data used is taken from https://www.kaggle.com/c/quora-question-pairs.
-
